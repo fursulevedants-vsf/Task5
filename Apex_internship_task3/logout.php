@@ -1,0 +1,13 @@
+<?php
+
+session_start();
+session_destroy();
+
+// Prevent caching so the login page does not repopulate after logout
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+header('Expires: 0');
+
+header("Location: login.php");
+
+?>
